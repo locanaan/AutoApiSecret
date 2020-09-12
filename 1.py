@@ -43,6 +43,9 @@ def main():
     'Content-Type':'application/json'
     }
     try:
+        if req.get(r'https://graph.microsoft.com/v1.0/me/calendars',headers=headers).status_code == 200:
+            num1+=1
+            print("0调用成功"+str(num1)+'次')
         if req.get(r'https://graph.microsoft.com/v1.0/me/drive/root',headers=headers).status_code == 200:
             num1+=1
             print("1调用成功"+str(num1)+'次')
